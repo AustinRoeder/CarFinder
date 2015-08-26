@@ -1,0 +1,39 @@
+// Alternate buttons
+// --------------------------------------------------
+
+.btn {
+  line-height: 1.37;
+}
+
+.btn-skewed {
+	transform: skewX(-27deg);
+
+	div {
+		transform: skewX(27deg);
+	}
+}
+
+// Add new buttons
+// --------------------------------------------------
+.btn-secondary {
+  .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+}
+
+.btn-tertiary {
+  .button-variant(@btn-tertiary-color; @btn-tertiary-bg; @btn-tertiary-border);
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  .button-size(@padding-large-vertical + 4; @padding-large-horizontal + 15; @font-size-large - 2; @line-height-large; @border-radius-large);
+}
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}
+.btn-xs {
+  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}

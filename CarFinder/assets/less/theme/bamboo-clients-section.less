@@ -1,0 +1,71 @@
+//
+// Bamboo Clients
+// --------------------------------------------------
+
+@bamboo-clients-padding:              40px;
+
+.bamboo-clients-section {
+  padding-top: @bamboo-clients-padding;
+  padding-bottom: @bamboo-clients-padding;
+  background: url(assets/img/theme-bg.jpg) no-repeat bottom center scroll;
+  background-color: #000;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+          background-size: cover;
+       -o-background-size: cover;
+  position: relative;
+
+  h3 {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid rgba(150, 175, 198, 0.25);
+    border-radius: 5px;
+    font-size: 16px;
+    top: -51px;
+    left: 50%;
+    margin-left: -87px;
+    padding: 15px 15px 12px;
+  }
+
+  ul {
+    margin-bottom: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 60px;
+      vertical-align: middle;
+
+      img {
+        max-width: 125px;
+        opacity: 1;
+        vertical-align: middle;
+        transition: all 0.2s ease-in;
+        
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
+
+
+//
+// Responsive CSS
+// --------------------------------------------------
+
+@media (max-width: @screen-lg-min) {
+  .bamboo-clients-section ul li {
+    display: inline-block;
+    margin: 10px 60px 10px 0px;
+    vertical-align: middle;
+  }
+}
+
+@media (max-width: @screen-sm-min) {
+  .bamboo-clients-section ul li {
+    display: inline-block;
+    margin: 15px 40px 15px 0px;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,60 @@
+//
+// Bamboo CTA bar
+// --------------------------------------------------
+
+@bamboo-cta-bar-padding:              40px;
+@bamboo-cta-bar-color:                #fff;
+
+.bamboo-cta-bar {
+  padding-top: @bamboo-cta-bar-padding;
+  padding-bottom: @bamboo-cta-bar-padding;
+  background: url(assets/img/theme-bg.jpg) no-repeat bottom center scroll;
+  background-color: #000;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+
+  h2 {
+    font-size: (@font-size-h2 / 1.2);
+    line-height: 2.1;
+    color: @bamboo-cta-bar-color;
+    margin: 0;
+    text-align: left;
+
+    small,
+    .small {
+      font-size: 80%;
+      color: fade(@bamboo-cta-bar-color, 60%)
+    }
+  }
+  
+  .btn {
+    margin-top: (@bamboo-cta-bar-padding / 6);
+  }
+}
+
+
+//
+// Responsive CSS
+// --------------------------------------------------
+
+@media (max-width: @screen-lg-min) {
+  .bamboo-cta-bar h2 {
+    font-size: (@font-size-h2 / 1.4);
+  }
+}
+
+@media (max-width: @screen-md-min) {
+  .bamboo-cta-bar h2 {
+    font-size: (@font-size-h2 / 1.7);
+  }
+}
+
+@media (max-width: @screen-sm-min) {
+  .bamboo-cta-bar h2 {
+    text-align: center;
+    font-size: (@font-size-h2 / 1.4);
+    margin-bottom: 10px;
+  }
+}

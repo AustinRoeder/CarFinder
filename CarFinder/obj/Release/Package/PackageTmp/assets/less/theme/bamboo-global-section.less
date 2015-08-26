@@ -1,0 +1,43 @@
+//
+// Section variables
+// --------------------------------------------------
+
+@padding-default-section:     100px 0;
+@margin-default-section:      100px 0;
+
+section {
+  padding: @padding-default-section;
+  text-align: center;
+  background-color: #fff;
+
+  h2 {
+    margin: 0 0 60px 0;
+    line-height: 1.4;
+    font-weight: bold;
+    font-size: (@font-size-h2 - 1);
+  }
+
+  h3 {
+    font-family: @font-family-headings;
+    font-size: (@font-size-h3 - 4);
+  }
+
+  h3,h4,h5,h6 {
+    font-family: @font-family-headings;
+  }
+
+  p {
+ 		line-height: 1.8;
+ 		font-weight: 300;
+  }
+  
+  li {
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  //Give all even sections a different background color
+  &:nth-child(even) {
+  	background-color: lighten(@gray-light, 19%);
+  }
+}

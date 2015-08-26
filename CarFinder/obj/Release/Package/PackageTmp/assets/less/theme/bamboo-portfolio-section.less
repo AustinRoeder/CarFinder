@@ -1,0 +1,129 @@
+//
+// Portfolio section
+// --------------------------------------------------
+
+.bamboo-portfolio-section {
+  h2 {
+    margin: 0 0 7px 0;
+  }
+
+  hr {
+    margin: 30px 0px;
+  }
+
+  .centered-pills { 
+    text-align:center; 
+    border-bottom: 1px solid @hr-border;
+    border-top: 1px solid @hr-border;
+    line-height: 0;
+    margin-top: 40px;
+    text-align: center;
+
+    ul.nav.nav-pills, .centered-pills ul.nav.nav-tabs { 
+      display:inline-block; 
+    }
+
+    ul.nav.nav-pills li, .centered-pills ul.nav.nav-tabs li { 
+      display:inline; 
+    }
+
+    .nav-pills > .active a {
+      border-radius: 0;
+    }
+  }
+  #grid {
+    margin-top: 190px;
+    list-style: none;
+    padding-left: 0;
+
+    .portfolio-item {
+      height: 200px;
+      margin-top: 45px;
+      position:relative;
+      overflow:hidden;
+      border-radius: 8px;
+
+      &:hover .caption {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      .portfolio-thumbnail {
+        position:relative;
+        overflow:hidden;
+      }
+
+      .caption {
+        -moz-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        -webkit-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+        background-clip: content-box;
+        background-color: fade(@brand-primary, 95%);
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        opacity: 0;
+        border-radius: 8px;
+        position: absolute;
+        text-align: center;
+
+        h4 {
+          margin: auto;
+          position: absolute;
+          top: 0; left: 0; bottom: 0; right: 0;
+          height: 40px;
+          color: #fff;
+          cursor: pointer;
+        }
+
+        small {
+          color: inherit;
+          cursor: inherit;
+        }
+      }
+      
+      img {
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+
+//
+// Responsive CSS
+// --------------------------------------------------
+
+@media (max-width: @screen-lg-min) {
+  #grid {
+    margin-top: 20px !important;
+  }
+}
+
+@media (max-width: @screen-md-min) {
+  .nav-pills li {
+    width: 100%;
+  }
+  .portfolio-item {
+    padding-left: 52px;
+    padding-right: 52px;
+    img {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: @screen-sm-min) {
+  .portfolio-item {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+@media (max-width: 450px) {
+  .portfolio-item {
+    width: 100% !important;
+  }
+}

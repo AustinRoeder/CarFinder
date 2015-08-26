@@ -1,0 +1,131 @@
+//
+// Pricing section
+// --------------------------------------------------
+
+.bamboo-pricing-section {
+  .plan {
+
+    .pricing-box {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 5px;
+      border: 1px solid darken(@hr-border, 10%);
+    }
+
+    .pricing-heading {
+      padding: 0 0 30px 0;
+
+      h3 {
+        margin: 0;
+        display: block;
+      }
+
+      .price {
+        font-size: (@font-size-h3 - 1);
+        font-weight: 400;
+        font-family: @font-family-headings;
+        line-height: 1.2;
+        position: relative;
+
+        span {
+          font-size: 16px;
+          left: -13px;
+          position: absolute;
+          top: 3px;
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+  .primary .pricing-list {
+    text-align: left;
+    padding: 30px 0;
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+
+      li {
+        padding-left: 0;
+        line-height: 1.5;
+
+        &:before {
+          content: "\f00c";
+          font-family: 'FontAwesome';
+          padding-right: 10px;
+          color: @brand-primary;
+        }
+      }
+    }
+  }
+  .secondary .pricing-list {
+    text-align: left;
+    padding: 30px 0;
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+
+      li {
+        padding-left: 0;
+        line-height: 1.5;
+
+        &:before {
+          content: "\f00c";
+          font-family: 'FontAwesome';
+          padding-right: 10px;
+          color: @brand-secondary;
+        }
+      }
+    }
+  }
+  .tertiary .pricing-list {
+    text-align: left;
+    padding: 30px 0;
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+
+      li {
+        padding-left: 0;
+        line-height: 1.5;
+        
+        &:before {
+          content: "\f00c";
+          font-family: 'FontAwesome';
+          padding-right: 10px;
+          color: @brand-tertiary;
+        }
+      }
+    }
+  }
+}
+
+
+//
+// Responsive CSS
+// --------------------------------------------------
+
+@media (max-width: @screen-lg-min) {
+  .bamboo-pricing-section .plan .pricing-heading h3 {
+    font-size: 19px;
+  }
+  .bamboo-pricing-section .plan .pricing-heading .price {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: @screen-md-min) {
+  .bamboo-pricing-section {
+    .plan {
+      margin-bottom: 40px;
+    }
+  }
+  .bamboo-pricing-section .plan .pricing-heading h3 {
+    font-size: 23px;
+  }
+  .bamboo-pricing-section .plan .pricing-heading .price {
+    font-size: 27px;
+  }
+}

@@ -1,0 +1,48 @@
+//
+// Team section
+// --------------------------------------------------
+
+.bamboo-team-section {
+  .team-block {
+    
+    img {
+      border-bottom: 4px solid @brand-primary;
+      margin: 0 auto;
+    }
+
+    strong {
+      color: @brand-primary;
+      font-size: 16.5px;
+      display: block;
+      margin: 35px 0 5px 0;
+      font-weight: 600;
+    }
+
+    .function {
+      color: @gray-light;
+      font-size: 11px;
+      margin: 5px 0 15px 0;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: (@font-size-base - 1);
+    }
+    
+    // Add margin-top starting from the 5th team-block, used for when there are more then 4 team members.
+    &:nth-child(+6) {
+      margin-top: 30px;
+    }
+  }
+}
+
+
+//
+// Responsive CSS
+// --------------------------------------------------
+
+@media (max-width: @screen-sm-min) {
+  .bamboo-team-section .team-block {
+    margin-bottom: 50px;
+  }
+}

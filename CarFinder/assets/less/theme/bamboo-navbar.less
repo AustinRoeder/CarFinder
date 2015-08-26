@@ -1,0 +1,825 @@
+//
+// Bamboo Navbar
+// --------------------------------------------------
+
+// Default navbar
+.navbar-bamboo {
+  background-color: transparent;
+
+  .navbar-brand {
+    color: #fff;
+    font-size: @navbar-bamboo-brand-size;
+    font-family: @navbar-bamboo-brand-font-family;
+    letter-spacing: -0.5px;
+    line-height: 16px;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+
+    &:before {
+      font-family: "outlined-iconset";
+      content: "\e006"; //Change this value to swap icons
+      vertical-align: middle;
+      padding-bottom: 6px;
+      color: @brand-primary;
+    }
+  }
+
+  .navbar-text {
+    color: #fff;
+  }
+
+  .navbar-nav {
+    > li {
+      transform: skewX(-27deg);  // Skew button to match theme
+      -ms-transform: skewX(-27deg);  // Skew button to match theme
+      -webkit-transform: skewX(-27deg);  // Skew button to match theme
+      border-right: 1px solid transparent;
+      -webkit-transition: all .5s ease-in-out;
+      -moz-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      &:nth-child(1) {
+        border-left: 1px solid transparent;
+      }
+    }
+
+    > li > a {
+      color: fade(#fff, 50%);
+      font-size: @navbar-font-size;
+      transform: skewX(27deg); // Skew button to match theme, needs to be positive value of the li
+      -ms-transform: skewX(27deg); // Skew button to match theme, needs to be positive value of the li
+      -webkit-transform: skewX(27deg); // Skew button to match theme, needs to be positive value of the li
+      -webkit-transition: all .5s ease-in-out;
+      -moz-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: @navbar-bamboo-link-hover-bg;
+      }
+    }
+
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-bamboo-link-active-color;
+        background-color: @navbar-bamboo-link-active-bg;
+      }
+    }
+
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-bamboo-link-disabled-color;
+        background-color: @navbar-bamboo-link-disabled-bg;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border-color: @navbar-bamboo-toggle-border-color;
+    background-color: @navbar-bamboo-toggle-bg;
+
+    &:hover,
+    &:focus {
+      background-color: @navbar-bamboo-toggle-hover-bg;
+    }
+
+    .icon-bar {
+      background-color: @navbar-bamboo-toggle-icon-bar-bg;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: @navbar-bamboo-border;
+  }
+
+  // Dropdown menu items
+  .navbar-nav {
+    // Remove background color from open dropdown
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @navbar-bamboo-link-active-bg;
+        color: @navbar-bamboo-link-active-color;
+      }
+    }
+
+    @media (max-width: @screen-md-min) {
+      // Dropdowns get custom display when collapsed
+      .open .dropdown-menu {
+        > li > a {
+          color: @navbar-bamboo-link-color;
+          &:hover,
+          &:focus {
+            color: @navbar-bamboo-link-hover-color;
+            background-color: @navbar-bamboo-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-bamboo-link-active-color;
+            background-color: @navbar-bamboo-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-bamboo-link-disabled-color;
+            background-color: @navbar-bamboo-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+  // Links in navbars
+  //
+  // Add a class to ensure links outside the navbar nav are colored correctly.
+
+  .navbar-link {
+    color: @navbar-bamboo-link-color;
+
+    &:hover {
+      color: @navbar-bamboo-link-hover-color;
+    }
+  }
+
+}
+
+// Change on scroll behaviour
+
+.navbar {
+  padding: 15px 0;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.top-nav-collapse {
+  background-color: @navbar-bamboo-bg;
+  border-color: @navbar-bamboo-border;
+  .shadow(@depth: inset 0 -9px 7px -9px @navbar-bamboo-shadow);
+  padding: 0px;
+
+  &:after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .navbar-brand {
+    color: @navbar-bamboo-brand-color;
+    font-size: @navbar-bamboo-brand-size;
+    font-family: @navbar-bamboo-brand-font-family;
+    letter-spacing: -0.5px;
+    line-height: 16px;
+    &:hover,
+    &:focus {
+      color: @navbar-bamboo-brand-hover-color;
+      background-color: @navbar-bamboo-brand-hover-bg;
+    }
+  }
+
+  .navbar-text {
+    color: @navbar-bamboo-color;
+  }
+
+  .navbar-nav {
+    > li {
+      background-color: transparent;
+      border-right: 1px solid #E6E6E6;
+      display: block;
+      position: relative;
+
+      &:hover {
+        background-color: fade(@gray-light, 9%);
+      }
+
+      &:nth-child(1) {
+        border-left: 1px solid #E6E6E6;
+      }
+    }
+
+    > li > a {
+      color: @navbar-bamboo-link-color;
+      font-size: @navbar-font-size;
+      &:hover,
+      &:focus {
+        color: @navbar-bamboo-link-hover-color;
+        background-color: @navbar-bamboo-link-hover-bg;
+      }
+    }
+
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-bamboo-link-active-color;
+        background-color: @navbar-bamboo-link-active-bg;
+      }
+    }
+
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-bamboo-link-disabled-color;
+        background-color: @navbar-bamboo-link-disabled-bg;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border-color: @navbar-bamboo-toggle-border-color;
+    background-color: @navbar-bamboo-toggle-bg;
+
+    &:hover,
+    &:focus {
+      background-color: @navbar-bamboo-toggle-hover-bg;
+    }
+
+    .icon-bar {
+      background-color: @navbar-bamboo-toggle-icon-bar-bg;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: @navbar-bamboo-border;
+  }
+
+  // Dropdown menu items
+  .navbar-nav {
+    // Remove background color from open dropdown
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @navbar-bamboo-link-active-bg;
+        color: @navbar-bamboo-link-active-color;
+      }
+    }
+
+    @media (max-width: @screen-md-min) {
+      // Dropdowns get custom display when collapsed
+      .open .dropdown-menu {
+        > li > a {
+          color: @navbar-bamboo-link-color;
+          &:hover,
+          &:focus {
+            color: @navbar-bamboo-link-hover-color;
+            background-color: @navbar-bamboo-link-hover-bg;
+          }
+        }
+
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-bamboo-link-active-color;
+            background-color: @navbar-bamboo-link-active-bg;
+          }
+        }
+
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-bamboo-link-disabled-color;
+            background-color: @navbar-bamboo-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+  // Links in navbars
+  //
+  // Add a class to ensure links outside the navbar nav are colored correctly.
+
+  .navbar-link {
+    color: @navbar-bamboo-link-color;
+
+    &:hover {
+      color: @navbar-bamboo-link-hover-color;
+    }
+  }
+}
+
+
+//
+// Alternate Bamboo Navbar
+// --------------------------------------------------
+
+.navbar-bamboo-alt {
+  background-color: @navbar-bamboo-bg;
+  border-color: @navbar-bamboo-border;
+  .shadow(@depth: inset 0 -9px 7px -9px @navbar-bamboo-shadow);
+  padding: 0px;
+
+  &:after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .navbar-brand {
+    color: @navbar-bamboo-brand-color;
+    font-size: @navbar-bamboo-brand-size;
+    font-family: @navbar-bamboo-brand-font-family;
+    letter-spacing: -0.5px;
+    line-height: 16px;
+
+    &:hover,
+    &:focus {
+      color: @navbar-bamboo-brand-hover-color;
+      background-color: @navbar-bamboo-brand-hover-bg;
+    }
+
+    &:before {
+      font-family: "outlined-iconset";
+      content: "\e006";
+      vertical-align: middle;
+      padding-bottom: 6px;
+      color: @brand-primary;
+    }
+  }
+
+  .navbar-text {
+    color: @navbar-bamboo-color;
+  }
+
+  .navbar-nav {
+    > li {
+      // Skew button to match theme
+      background-color: transparent;
+      border-right: 1px solid #E6E6E6;
+      transform: skewX(-27deg);
+      -ms-transform: skewX(-27deg);
+      -webkit-transform: skewX(-27deg);
+      -webkit-transition: all .5s ease-in-out;
+      -moz-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      display: block;
+      position: relative;
+
+      &:hover {
+        background-color: fade(@gray-light, 9%);
+      }
+
+      &:nth-child(1) {
+        border-left: 1px solid #E6E6E6;
+      }
+    }
+    > li > a {
+      color: @navbar-bamboo-link-color;
+      font-size: @navbar-font-size;
+      transform: skewX(27deg);
+      -ms-transform: skewX(27deg);
+      -webkit-transform: skewX(27deg);
+
+      &:hover,
+      &:focus {
+        color: @navbar-bamboo-link-hover-color;
+        background-color: @navbar-bamboo-link-hover-bg;
+      }
+    }
+
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-bamboo-link-active-color;
+        background-color: @navbar-bamboo-link-active-bg;
+      }
+    }
+
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-bamboo-link-disabled-color;
+        background-color: @navbar-bamboo-link-disabled-bg;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border-color: @navbar-bamboo-toggle-border-color;
+    background-color: @navbar-bamboo-toggle-bg;
+
+    &:hover,
+    &:focus {
+      background-color: @navbar-bamboo-toggle-hover-bg;
+    }
+
+    .icon-bar {
+      background-color: @navbar-bamboo-toggle-icon-bar-bg;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: @navbar-bamboo-border;
+  }
+
+  // Dropdown menu items
+  .navbar-nav {
+    // Remove background color from open dropdown
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @navbar-bamboo-link-active-bg;
+        color: @navbar-bamboo-link-active-color;
+      }
+    }
+
+    @media (max-width: @grid-float-breakpoint-max) {
+      // Dropdowns get custom display when collapsed
+      .open .dropdown-menu {
+        > li > a {
+          color: @navbar-bamboo-link-color;
+          &:hover,
+          &:focus {
+            color: @navbar-bamboo-link-hover-color;
+            background-color: @navbar-bamboo-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-bamboo-link-active-color;
+            background-color: @navbar-bamboo-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-bamboo-link-disabled-color;
+            background-color: @navbar-bamboo-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+  // Links in navbars
+  //
+  // Add a class to ensure links outside the navbar nav are colored correctly.
+
+  .navbar-link {
+    color: @navbar-bamboo-link-color;
+    &:hover {
+      color: @navbar-bamboo-link-hover-color;
+    }
+  }
+}
+
+// Modify the dropdowns 
+//
+// Change the style and position for the dropdown menu's to match main nav style on big screens
+
+@media (min-width: @screen-md-min) {
+  .navbar a {
+    outline: 0;
+  }
+  
+  .navbar-bamboo .dropdown-menu li {
+    display: inline-block;
+    border-right: 1px solid darken(@brand-primary, 10%);
+
+    &:last-child {
+      border: none;
+    }
+  }
+  
+  .navbar-bamboo .dropdown-menu li a {
+    transform: skewX(27deg);
+    -ms-transform: skewX(27deg);
+    -webkit-transform: skewX(27deg);
+    color: #fff;
+    padding: 10px 15px 10px 10px;
+
+    &:hover, &:active {
+      background-color: transparent;
+      color: lighten(@brand-primary, 30%);
+    }
+  }
+  
+  .navbar-bamboo .dropdown-left .dropdown-menu {
+    background-color: @brand-primary;
+    margin-right:-1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-shadow: none;
+    border: none;
+    margin-top: 2px !important;
+  }
+  
+  .navbar-bamboo .dropdown-right .dropdown-menu {
+    background-color: @brand-primary;
+    margin-left:-1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-shadow: none;
+    border: none;
+    margin-top: 2px !important;
+  }
+  
+  .navbar-bamboo-alt .dropdown-menu li {
+    display: inline-block;
+    border-right: 1px solid darken(@brand-primary, 10%);
+
+    &:last-child {
+      border: none;
+    }
+  }
+  
+  .navbar-bamboo-alt .dropdown-menu li a {
+    transform: skewX(27deg);
+    -ms-transform: skewX(27deg);
+    -webkit-transform: skewX(27deg);
+    color: #fff;
+    padding: 10px 15px 10px 10px;
+
+    &:hover, &:active {
+      background-color: transparent;
+      color: lighten(@brand-primary, 30%);
+    }
+  }
+  
+  .navbar-bamboo-alt .dropdown-left .dropdown-menu {
+    background-color: @brand-primary;
+    margin-right:-1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-shadow: none;
+    border: none;
+    margin-top: 2px !important;
+  }
+  
+  .navbar-bamboo-alt .dropdown-right .dropdown-menu {
+    background-color: @brand-primary;
+    margin-left:-1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-shadow: none;
+    border: none;
+    margin-top: 2px !important;
+  }
+}
+
+//
+// Responsive CSS
+// --------------------------------------------------
+
+@media (max-width: @screen-md-min) {
+
+  .navbar-bamboo {
+    background-color: @navbar-bamboo-bg;
+    border-color: @navbar-bamboo-border;
+    .shadow(@depth: inset 0 -9px 7px -9px @navbar-bamboo-shadow);
+    padding: 0px;
+  
+    &:after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: #fff;
+    }
+  
+    .navbar-brand {
+      color: @navbar-bamboo-brand-color;
+      font-size: @navbar-bamboo-brand-size;
+      font-family: @navbar-bamboo-brand-font-family;
+      letter-spacing: -0.5px;
+      line-height: 16px;
+
+      &:hover,
+      &:focus {
+        color: @navbar-bamboo-brand-hover-color;
+        background-color: @navbar-bamboo-brand-hover-bg;
+      }
+    }
+  
+    .navbar-text {
+      color: @navbar-bamboo-color;
+    }
+  
+    .navbar-nav {
+      > li {
+        // Remove skew
+        background-color: transparent;
+        border-right: none;
+        transform: skewX(0deg);
+        -ms-transform: skewX(0deg);
+        -webkit-transform: skewX(0deg);
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        display: block;
+        position: relative;
+
+        &:hover {
+          background-color: #f3f3f3;
+        }
+
+        &:nth-child(1) {
+          border-left: 1px solid #E6E6E6;
+        }
+      }
+      > li > a {
+        color: @navbar-bamboo-link-color;
+        font-size: @navbar-font-size;
+        transform: skewX(0deg);
+        -ms-transform: skewX(0deg);
+        -webkit-transform: skewX(0deg);
+
+        &:hover,
+        &:focus {
+          color: @navbar-bamboo-link-hover-color;
+          background-color: @navbar-bamboo-link-hover-bg;
+        }
+      }
+      > .active > a {
+        &,
+        &:hover,
+        &:focus {
+          color: @navbar-bamboo-link-active-color;
+          background-color: @navbar-bamboo-link-active-bg;
+        }
+      }
+      > .disabled > a {
+        &,
+        &:hover,
+        &:focus {
+          color: @navbar-bamboo-link-disabled-color;
+          background-color: @navbar-bamboo-link-disabled-bg;
+        }
+      }
+    }
+  
+    .navbar-toggle {
+      border-color: @navbar-bamboo-toggle-border-color;
+      background-color: @navbar-bamboo-toggle-bg;
+
+      &:hover,
+      &:focus {
+        background-color: @navbar-bamboo-toggle-hover-bg;
+      }
+
+      .icon-bar {
+        background-color: @navbar-bamboo-toggle-icon-bar-bg;
+      }
+    }
+  
+    .navbar-collapse,
+    .navbar-form {
+      border-color: @navbar-bamboo-border;
+    }
+  
+    // Dropdown menu items
+    .navbar-nav {
+      // Remove background color from open dropdown
+      > .open > a {
+        &,
+        &:hover,
+        &:focus {
+          background-color: @navbar-bamboo-link-active-bg;
+          color: @navbar-bamboo-link-active-color;
+        }
+      }
+  
+      @media (max-width: @screen-md-min) {
+        // Dropdowns get custom display when collapsed
+        .open .dropdown-menu {
+          > li > a {
+            color: @navbar-bamboo-link-color;
+            &:hover,
+            &:focus {
+              color: @navbar-bamboo-link-hover-color;
+              background-color: @navbar-bamboo-link-hover-bg;
+            }
+          }
+          > .active > a {
+            &,
+            &:hover,
+            &:focus {
+              color: @navbar-bamboo-link-active-color;
+              background-color: @navbar-bamboo-link-active-bg;
+            }
+          }
+          > .disabled > a {
+            &,
+            &:hover,
+            &:focus {
+              color: @navbar-bamboo-link-disabled-color;
+              background-color: @navbar-bamboo-link-disabled-bg;
+            }
+          }
+        }
+      }
+    }
+  
+    // Links in navbars
+    //
+    // Add a class to ensure links outside the navbar nav are colored correctly.
+  
+    .navbar-link {
+      color: @navbar-bamboo-link-color;
+      &:hover {
+        color: @navbar-bamboo-link-hover-color;
+      }
+    }
+  }
+
+  .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+
+    > li > a,
+    .dropdown-header {
+      padding: 5px 15px 5px 25px;
+    }
+
+    > li > a {
+      line-height: @line-height-computed;
+      &:hover,
+      &:focus {
+        background-image: none;
+      }
+    }
+  }
+
+  .navbar-header {
+    float: none;
+  }
+
+  .navbar-left,.navbar-right {
+    float: none !important;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+  }
+
+  .navbar-nav > li {
+    float: none;
+  }
+
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .collapse.in{
+    display:block !important;
+  }
+}

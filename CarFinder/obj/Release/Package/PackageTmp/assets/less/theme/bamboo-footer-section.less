@@ -1,0 +1,51 @@
+//
+// Footer section
+// --------------------------------------------------
+
+footer {
+  padding-top: 90px;
+  padding-bottom: 100px;
+  text-align: left;
+
+  h4 {
+    font-family: @font-family-headings;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  p,address {
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  hr {
+    margin-top: 55px;
+    margin-bottom: 30px;
+  }
+
+  .bamboo-social {
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        display: inline-block;
+        margin-bottom: 10px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-sm-min) {
+  footer .col-md-3 {
+    padding-top: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid @hr-border;
+    
+    &:nth-child(4) {
+      border: none;
+    }
+  }
+}
