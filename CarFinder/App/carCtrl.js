@@ -1,13 +1,16 @@
 ﻿(function () {
     angular.module('car-finder')
-    .controller('carCtrl', ['$modal','carSvc', function ($modal, carSvc) {
+    .controller('carCtrl', ['$scope','$modal','carSvc', function ($scope, $modal, carSvc) {
         var self = this;
-
         this.selected = {
             year: '',
             make: '',
-            name: '',
+            model: '',
             trim: '',
+            filter: '',
+            paging: true,
+            page: 0,
+            perPage: 10
         }
 
         this.options = {
@@ -18,6 +21,7 @@
         }
 
         this.cars = [];
+        this.totalCarsCount = 0;
 
         this.getYears = function () {
             carSvc.getYears().then(function (data) {
@@ -34,7 +38,7 @@
 
             self.cars = [];
 
-            carSvc.getMakes(self.selected.year).then(function (data) {
+            carSvc.getMakes(self.selected).then(function (data) {
                 self.options.makes = data;
             })
             self.getCars();
@@ -47,7 +51,7 @@
 
             self.cars = [];
 
-            carSvc.getModels(self.selected.year, self.selected.make).then(function (data) {
+            carSvc.getModels(self.selected).then(function (data) {
                 self.options.models = data;
             })
             self.getCars();
@@ -58,7 +62,7 @@
 
             self.cars = [];
 
-            carSvc.getTrims(self.selected.year, self.selected.make, self.selected.model)
+            carSvc.getTrims(self.selected)
                 .then(function (data) {
                     self.options.trims = data;
                 })
@@ -66,11 +70,21 @@
         }
         this.getCars = function () {
             self.cars = [];
-            carSvc.getCars(self.selected.year, self.selected.make, self.selected.model, self.selected.trim)
+            carSvc.getCars(self.selected)
                 .then(function (data) {
                     self.cars = data;
-                })
+                });
+            carSvc.getCarsCount(self.selected).then(function (data) {
+                self.totalCarsCount = data;
+            });
+            console.log(self.cars)
         }
+
+        $scope.mySelectedItems = [];
+        $scope.$watchCollection("mySelectedItems", function () {
+            if($scope.mySelectedItems.length == 1)
+                self.getCar($scope.mySelectedItems[0].id)
+        });
 
         this.getYears();
 
@@ -78,7 +92,7 @@
             $modal.open({
                 templateUrl: '/App/templates/carModal.html',
                 controller: 'carModalCtrl as mCtrl',
-                size: 'lg',
+                size: 'md',
                 resolve: {
                     vm: function () {
                         return carSvc.getCar(id);

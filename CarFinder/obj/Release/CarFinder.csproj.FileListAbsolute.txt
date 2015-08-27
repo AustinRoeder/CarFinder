@@ -66,3 +66,15 @@ C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migra
 C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.csproj.GenerateResource.Cache
 C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.dll
 C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.pdb
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.csprojResolveAssemblyReference.cache
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.NewStuff.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.AfterPublish.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.ThisIsTooMuch.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.IDModelChange.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.MoreChanges.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.abc.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.StuffAgain.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.Array.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.moreArray.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.RiaBlamedThomas.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.Wat.resources

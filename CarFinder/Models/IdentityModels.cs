@@ -56,15 +56,45 @@ namespace CarFinder.Models
             var modelParam = new SqlParameter("@model", model);
             return await Database.SqlQuery<string>("GetTrims @year, @make, @model", yearParam, makeParam, modelParam).ToListAsync();
         }
-        public async Task<List<Car>> GetCars(string year, string make, string model, string trim, string filter = "", 
-                                                        bool paging = false, int? page = null, int? perPage = null)
+        public async Task<List<Car>> GetCars(string year, string make, string model, string trim, string filter, 
+                                                        bool paging, int? page, int? perPage)
         {
-            var trimParam = new SqlParameter("@trim", trim);
-            var yearParam = new SqlParameter("@year", year);
-            var makeParam = new SqlParameter("@make", make);
-            var modelParam = new SqlParameter("@model", model);
-            var filterParam = new SqlParameter("@filter", filter);
-            return await Database.SqlQuery<Car>("GetCars @year, @make, @model, @trim, @filter", yearParam, makeParam, modelParam, trimParam, filterParam).ToListAsync();
+            var sqlString = "GetCars @year, @make, @model, @trim, @filter";
+            var sqlParams = new List<SqlParameter>() { 
+                new SqlParameter("@year", year),
+                new SqlParameter("@make", make),
+                new SqlParameter("@model", model),
+                new SqlParameter("@trim", trim),
+                new SqlParameter("@filter", filter)
+            };
+            if (paging)
+            {
+                sqlString += ", @paging";
+                sqlParams.Add(new SqlParameter("@paging", paging));
+            }
+            if (page != null)
+            {
+                sqlString += ", @page";
+                sqlParams.Add(new SqlParameter("@page", page));
+            } 
+            if (perPage != null)
+            {
+                sqlString += ", @perPage";
+                sqlParams.Add(new SqlParameter("@perPage", perPage));
+            }
+            return await Database.SqlQuery<Car>(sqlString, sqlParams.ToArray()).ToListAsync();
+        }
+        public async Task<int> GetCarsCount(string year, string make, string model, string trim, string filter)
+        {
+            var sqlString = "GetCarsCount @year, @make, @model, @trim, @filter";
+            var sqlParams = new List<SqlParameter>() { 
+                new SqlParameter("@year", year),
+                new SqlParameter("@make", make),
+                new SqlParameter("@model", model),
+                new SqlParameter("@trim", trim),
+                new SqlParameter("@filter", filter)
+            };
+            return await Database.SqlQuery<int>(sqlString, sqlParams.ToArray()).FirstAsync();
         }
     }
 }

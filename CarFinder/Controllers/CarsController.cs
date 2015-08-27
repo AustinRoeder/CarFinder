@@ -58,8 +58,17 @@ namespace CarFinder.Controllers
         public async Task<List<Car>> GetCars(Options options)
         {
             options.filter = options.filter ?? "";
-            return await db.GetCars(options.year, options.make, options.model, options.trim,
+            var cars = await db.GetCars(options.year, options.make, options.model, options.trim,
                                             options.filter, options.paging, options.page, options.perPage);
+            return cars;
+        }
+        [HttpPost]
+        [Route("GetCarsCount")]
+        public async Task<int> GetCarsCount(Options options)
+        {
+             var carCount = await db.GetCarsCount(options.year, options.make, options.model, options.trim,
+                                            options.filter);
+             return carCount;
         }
         [HttpGet, HttpPost, Route("getCar")]
         public async Task<IHttpActionResult> getCar([FromBody]int Id)

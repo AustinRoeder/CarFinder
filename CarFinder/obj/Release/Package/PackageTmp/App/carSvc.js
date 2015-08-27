@@ -8,23 +8,28 @@
                 return response.data;
             })
         }
-        f.getMakes = function (year) {
-            return $http.post('/api/cars/GetMakes', { year: year }).then(function (response) {
+        f.getMakes = function (options) {
+            return $http.post('/api/cars/GetMakes', options).then(function (response) {
                 return response.data;
             })
         }
-        f.getModels = function (year, make) {
-            return $http.post('/api/cars/GetModels', { year: year, make: make }).then(function (response) {
+        f.getModels = function (options) {
+            return $http.post('/api/cars/GetModels', options).then(function (response) {
                 return response.data;
             })
         }
-        f.getTrims = function (year, make, model) {
-            return $http.post('/api/cars/GetTrims', { year: year, make: make, model: model }).then(function (response) {
+        f.getTrims = function (options) {
+            return $http.post('/api/cars/GetTrims', options).then(function (response) {
                 return response.data;
             })
         }
-        f.getCars = function (year, make, model, trim, filter) {
-            return $http.post('/api/cars/GetCars', { year: year, make: make, model: model, trim: trim, filter: filter }).then(function (response) {
+        f.getCars = function (options) {
+            return $http.post('/api/cars/GetCars', options).then(function (response) {
+                return response.data;
+            })
+        }
+        f.getCarsCount = function (options) {
+            return $http.post('/api/cars/GetCarsCount', options).then(function (response) {
                 return response.data;
             })
         }

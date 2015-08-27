@@ -223,6 +223,50 @@
     <Compile Include="Migrations\201508262031346_ChangedThings.Designer.cs">
       <DependentUpon>201508262031346_ChangedThings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508271331074_NewStuff.cs" />
+    <Compile Include="Migrations\201508271331074_NewStuff.Designer.cs">
+      <DependentUpon>201508271331074_NewStuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508271419530_AfterPublish.cs" />
+    <Compile Include="Migrations\201508271419530_AfterPublish.Designer.cs">
+      <DependentUpon>201508271419530_AfterPublish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508271444423_ThisIsTooMuch.cs" />
+    <Compile Include="Migrations\201508271444423_ThisIsTooMuch.Designer.cs">
+      <DependentUpon>201508271444423_ThisIsTooMuch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508271739354_IDModelChange.cs" />
+    <Compile Include="Migrations\201508271739354_IDModelChange.Designer.cs">
+      <DependentUpon>201508271739354_IDModelChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508271748215_MoreChanges.cs" />
+    <Compile Include="Migrations\201508271748215_MoreChanges.Designer.cs">
+      <DependentUpon>201508271748215_MoreChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508271811385_abc.cs" />
+    <Compile Include="Migrations\201508271811385_abc.Designer.cs">
+      <DependentUpon>201508271811385_abc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508271846536_StuffAgain.cs" />
+    <Compile Include="Migrations\201508271846536_StuffAgain.Designer.cs">
+      <DependentUpon>201508271846536_StuffAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508271852485_Array.cs" />
+    <Compile Include="Migrations\201508271852485_Array.Designer.cs">
+      <DependentUpon>201508271852485_Array.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508271903301_moreArray.cs" />
+    <Compile Include="Migrations\201508271903301_moreArray.Designer.cs">
+      <DependentUpon>201508271903301_moreArray.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508271918028_RiaBlamedThomas.cs" />
+    <Compile Include="Migrations\201508271918028_RiaBlamedThomas.Designer.cs">
+      <DependentUpon>201508271918028_RiaBlamedThomas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508271948161_Wat.cs" />
+    <Compile Include="Migrations\201508271948161_Wat.Designer.cs">
+      <DependentUpon>201508271948161_Wat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BingSearchContainer.cs" />
@@ -345,6 +389,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\trNgGrid.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -1237,6 +1282,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\trNgGrid.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1284,6 +1330,39 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201508262031346_ChangedThings.resx">
       <DependentUpon>201508262031346_ChangedThings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508271331074_NewStuff.resx">
+      <DependentUpon>201508271331074_NewStuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508271419530_AfterPublish.resx">
+      <DependentUpon>201508271419530_AfterPublish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508271444423_ThisIsTooMuch.resx">
+      <DependentUpon>201508271444423_ThisIsTooMuch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508271739354_IDModelChange.resx">
+      <DependentUpon>201508271739354_IDModelChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508271748215_MoreChanges.resx">
+      <DependentUpon>201508271748215_MoreChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508271811385_abc.resx">
+      <DependentUpon>201508271811385_abc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508271846536_StuffAgain.resx">
+      <DependentUpon>201508271846536_StuffAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508271852485_Array.resx">
+      <DependentUpon>201508271852485_Array.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508271903301_moreArray.resx">
+      <DependentUpon>201508271903301_moreArray.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508271918028_RiaBlamedThomas.resx">
+      <DependentUpon>201508271918028_RiaBlamedThomas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508271948161_Wat.resx">
+      <DependentUpon>201508271948161_Wat.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
