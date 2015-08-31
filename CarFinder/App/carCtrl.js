@@ -9,7 +9,7 @@
             trim: '',
             filter: '',
             paging: true,
-            page: 0,
+            page: 1,
             perPage: 10
         }
 
@@ -70,7 +70,9 @@
         }
         this.getCars = function () {
             self.cars = [];
-            carSvc.getCars(self.selected)
+            var tmp = angular.copy(self.selected);
+            tmp.page++;
+            carSvc.getCars(tmp)
                 .then(function (data) {
                     self.cars = data;
                 });
@@ -100,11 +102,50 @@
                 }
             });
         }
+       
     }])
     angular.module('ui.bootstrap').controller('carModalCtrl', function ($modalInstance, vm) {
         this.vm = vm;
         this.ok = function () {
             $modalInstance.close();
         };
+        this.recallPage = 0;
+        this.recallCount = this.vm.recalls.Count;
+        this.noRecalls = this.recallCount == 0 ? true : false
+        this.NextPage = function () {
+            if (this.recallPage != this.recallCount - 1) {
+                this.recallPage = this.recallPage + 1;
+            }
+            else {
+                this.recallPage = 0;
+            }
+        }
+        this.PrevPage = function () {
+            if (this.recallPage != 0) {
+                this.recallPage = this.recallPage - 1;
+            }
+            else {
+                this.recallPage = this.recallCount - 1;
+            }
+        }
     });
+    angular.module('ui.bootstrap').controller('TabsCtrl', ['$scope', function ($scope) {
+        $scope.tabs = [{
+            title: 'Details',
+            url: 'one.tpl.html'
+        }, {
+            title: 'Recalls',
+            url: 'two.tpl.html'
+        }];
+
+        $scope.currentTab = 'one.tpl.html';
+
+        $scope.onClickTab = function (tab) {
+            $scope.currentTab = tab.url;
+        }
+
+        $scope.isActiveTab = function (tabUrl) {
+            return tabUrl == $scope.currentTab;
+        }
+    }]);
 })();

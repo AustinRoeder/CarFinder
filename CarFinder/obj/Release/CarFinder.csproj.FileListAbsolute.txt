@@ -78,3 +78,5 @@ C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migra
 C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.moreArray.resources
 C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.RiaBlamedThomas.resources
 C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.Wat.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.SorryShane.resources
+C:\Users\Austin\Documents\GitHub\CarFinder\CarFinder\obj\Release\CarFinder.Migrations.oasd.resources

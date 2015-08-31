@@ -41,7 +41,6 @@
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden"><a href="#top"></a></li>
-                    <li><a href="#about" class="page-scroll">Details</a></li>
                     <li><a href="#features" class="page-scroll">Features</a></li>
                     <li><a href="#contact" class="page-scroll">About Us</a></li>
                 </ul>
@@ -55,14 +54,14 @@
                     <div class="col-lg-12">
                         <p class="subtitle">FIND YOUR CAR IN A CLICK</p>
                         <div class="cta-buttons">
-                            <a href="#about" class="page-scroll btn btn-skewed btn-lg btn-primary"><div>Read More</div></a>
+                            <a href="#features" class="page-scroll btn btn-skewed btn-lg btn-primary"><div>Begin</div></a>
                         </div> <!-- /.cta-buttons -->
                     </div> <!-- /.col-lg-12 -->
                 </div> <!-- /.row -->
             </div> <!-- /.container -->
         </div> <!-- /.intro-body -->
     </section>
-    <section id="features" class="bamboo-feature-section">
+    <section id="features" class="bamboo-feature-section" style="padding:0px">
         <div class="jumbotron">
             <div ng-controller="carCtrl as ctrl" ng-cloak>
                 <h2>
@@ -103,9 +102,9 @@
                         <thead>
                             <tr>
                                 <th enable-filtering="false" field-name="model_year" enable-sorting="false" display-name="Year" display-align="center"></th>
-                                <th enable-filtering="false" field-name="make" display-name="Make" display-align="center"></th>
-                                <th enable-filtering="false" field-name="model_name" display-name="Model" display-align="center"></th>
-                                <th enable-filtering="false" field-name="model_trim" display-name="Trim" display-align="center"></th>
+                                <th enable-filtering="false" field-name="make" enable-sorting="false" display-name="Make" display-align="center"></th>
+                                <th enable-filtering="false" field-name="model_name" enable-sorting="false" display-name="Model" display-align="center"></th>
+                                <th enable-filtering="false" field-name="model_trim" enable-sorting="false" display-name="Trim" display-align="center"></th>
                             </tr>
                         </thead>
                     </table>

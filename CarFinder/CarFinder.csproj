@@ -267,6 +267,14 @@
     <Compile Include="Migrations\201508271948161_Wat.Designer.cs">
       <DependentUpon>201508271948161_Wat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508272045168_SorryShane.cs" />
+    <Compile Include="Migrations\201508272045168_SorryShane.Designer.cs">
+      <DependentUpon>201508272045168_SorryShane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508301919285_oasd.cs" />
+    <Compile Include="Migrations\201508301919285_oasd.Designer.cs">
+      <DependentUpon>201508301919285_oasd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BingSearchContainer.cs" />
@@ -1363,6 +1371,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201508271948161_Wat.resx">
       <DependentUpon>201508271948161_Wat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508272045168_SorryShane.resx">
+      <DependentUpon>201508272045168_SorryShane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508301919285_oasd.resx">
+      <DependentUpon>201508301919285_oasd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

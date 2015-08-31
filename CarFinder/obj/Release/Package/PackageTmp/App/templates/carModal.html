@@ -1,11 +1,127 @@
-﻿<div class="modal-header">
+﻿<style>
+    ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    float: left;
+    border: 1px solid #000;
+    border-bottom-width: 0;
+    margin: 3px 3px 0px 3px;
+    padding: 5px 5px 0px 5px;
+    background-color: #CCC;
+    color: #696969;
+}
+h4{
+    color: #96c93d
+}
+#mainView {
+    border: 1px solid black;
+	clear: both;
+	padding: 0 1em;
+}
+.active {
+    background-color: #FFF;
+    color: #000;
+}
+</style>
+<div class="modal-header">
     <h3 class="modal-title">{{mCtrl.vm.car.model_year}} {{mCtrl.vm.car.make}} {{mCtrl.vm.car.model_name}}
-        <br />
-        <small>{{mCtrl.vm.car.model_trim}}</small>
     </h3>
 </div>
 <div class="modal-body" style="word-wrap: break-word">
     <img ng-src="{{mCtrl.vm.image}}" style="width:100%"/>
+    <hr />
+    <div id="tabs" ng-controller="TabsCtrl">
+        <ul>
+            <li ng-repeat="tab in tabs"
+                ng-class="{active:isActiveTab(tab.url)}"
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="one.tpl.html">
+        <div id="viewOne" class="" style="margin-left: 10px;padding: 0">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4>
+                        Body Trim: 
+                        <small>
+                            {{mCtrl.vm.car.model_trim}}
+                        </small>
+                    </h4>
+                    <h4>
+                        Body Style: 
+                        <small>
+                            {{mCtrl.vm.car.body_style}}
+                        </small>
+                    </h4>
+                    <h4>
+                        Transmission: 
+                        <small>
+                            {{mCtrl.vm.car.transmission_type != "" ? mCtrl.vm.car.transmission_type : "Not Defined"}}
+                        </small>
+                    </h4>
+                    <h4>
+                        Drive Type: 
+                        <small>
+                            {{mCtrl.vm.car.drive_type != "4WD" ? mCtrl.vm.car.drive_type + " Wheel Drive" : mCtrl.vm.car.drive_type}}
+                        </small>
+                    </h4>
+                </div>
+                <div class="col-sm-6">
+                    <h4>
+                        Cylinders:
+                        <small>
+                            {{mCtrl.vm.car.engine_num_cyl}}
+                        </small>
+                    </h4>
+                    <h4>
+                        Seats:
+                        <small>
+                            {{mCtrl.vm.car.seats}}
+                        </small>
+                    </h4>
+                    <h4>
+                        Doors:
+                        <small>
+                            {{mCtrl.vm.car.doors}}
+                        </small>
+                    </h4>
+                    <h4>
+                        Engine Power:
+                        <small>
+                            {{mCtrl.vm.car.engine_power_ps + " ps"}}
+                        </small>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="two.tpl.html">
+        <div id="viewTwo">
+            <div ng-hide="{{mCtrl.noRecalls}}">
+                <h4>Manufacturer: <small>{{mCtrl.vm.recalls.Results[mCtrl.recallPage].Manufacturer}}</small></h4>
+                <h4>NHTSA Campaign Number: <small>{{mCtrl.vm.recalls.Results[mCtrl.recallPage].NHTSACampaignNumber}}</small></h4>
+                <h4>Report Received Date: <small>{{mCtrl.vm.recalls.Results[mCtrl.recallPage].ReportReceivedDate}}</small></h4>
+                <h4>Component: <small>{{mCtrl.vm.recalls.Results[mCtrl.recallPage].Component}}</small></h4>
+                <h4>Summary: <small>{{mCtrl.vm.recalls.Results[mCtrl.recallPage].Summary}}</small></h4>
+                <h4>Consequence: <small>{{mCtrl.vm.recalls.Results[mCtrl.recallPage].Conequence}}</small></h4>
+                <h4>Remedy: <small>{{mCtrl.vm.recalls.Results[mCtrl.recallPage].Remedy}}</small></h4>
+                <h4>Notes: <small>{{mCtrl.vm.recalls.Results[mCtrl.recallPage].Notes}}</small></h4>
+                <div class="text-center">
+                    <button class="btn btn-primary" ng-click="mCtrl.PrevPage()">Previous</button>&nbsp;Recall {{mCtrl.recallPage + 1}} / {{mCtrl.recallCount}}&nbsp;<button class="btn btn-primary" ng-click="mCtrl.NextPage()">Next</button>
+                </div>
+            </div>
+            <div ng-show="{{mCtrl.noRecalls}}">
+                There are no recalls for the {{mCtrl.vm.car.model_year}} {{mCtrl.vm.car.make}} {{mCtrl.vm.car.model_name}}.
+            </div>
+        </div>
+    </script>
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" type="button" ng-click="mCtrl.ok()">OK</button>
